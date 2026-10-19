@@ -35,10 +35,32 @@ const $ = id => document.getElementById(id);
 const money = amount => "TSh " + Number(amount).toLocaleString("en-US");
 
 function showPage(id) {
+  const target = $(id);
+
+  if (!target) {
+    console.error("BIGZERO KUKU: Ukurasa haujapatikana:", id);
+    return;
+  }
+
   document.querySelectorAll(".page").forEach(page => {
     page.classList.toggle("active", page.id === id);
   });
-  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  window.scrollTo({ top: 0, behavior: "auto" });
+}
+
+function enterShop() {
+  const splash = $("splash");
+  const home = $("homePage");
+
+  if (!home) {
+    alert("Ukurasa wa homePage haujapatikana. Hakikisha index.html ina id=\"homePage\".");
+    return;
+  }
+
+  if (splash) splash.classList.add("hide");
+
+  showPage("homePage");
 }
 
 function productImage(product) {
@@ -73,6 +95,7 @@ function openCategory(id) {
   }
 
   const grid = $("productGrid");
+
   if (!grid) {
     alert("Sehemu ya bidhaa haijapatikana kwenye index.html.");
     return;
@@ -80,6 +103,7 @@ function openCategory(id) {
 
   grid.innerHTML = category.products.map(productId => {
     const product = products[productId];
+    if (!product) return "";
 
     return `
       <article class="product-card" data-product="${product.id}" tabindex="0">
@@ -108,6 +132,7 @@ function openProduct(id) {
   currentProduct = product;
 
   const detail = $("productDetail");
+
   if (!detail) {
     alert("Sehemu ya maelezo ya bidhaa haijapatikana.");
     return;
@@ -152,6 +177,7 @@ function openProduct(id) {
 function quantity() {
   const input = $("detailQty");
   const value = Number(input ? input.value : 1);
+
   return Number.isInteger(value) && value > 0 ? value : 1;
 }
 
@@ -286,34 +312,24 @@ function submitOrder(event) {
     `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-
-
 function initBigzero() {
-  const enterButton = document.getElementById("enterBtn");
+  const enterButton = $("enterBtn");
 
   if (enterButton) {
-    enterButton.onclick = function () {
-      const splash = document.getElementById("splash");
-
-      if (splash) {
-        splash.classList.add("hide");
-      }
-
-      showPage("homePage");
-    };
+    enterButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      enterShop();
+    });
   }
-  
+
   const browseButton = $("browseBtn");
   if (browseButton) {
-    browseButton.addEventListener("click", () => showPage("homePage"));
+    browseButton.addEventListener("click", enterShop);
   }
 
   const homeLogo = $("homeLogo");
   if (homeLogo) {
-    homeLogo.addEventListener("click", () => {
-      if ($("splash")) $("splash").classList.add("hide");
-      showPage("homePage");
-    });
+    homeLogo.addEventListener("click", enterShop);
   }
 
   const cartButton = $("cartBtn");
@@ -329,7 +345,7 @@ function initBigzero() {
     checkoutButton.addEventListener("click", () => {
       if (!cart.length) {
         alert("Kikapu chako bado hakina bidhaa. Tafadhali chagua bidhaa kwanza.");
-        showPage("homePage");
+        enterShop();
         return;
       }
 
@@ -347,32 +363,35 @@ function initBigzero() {
   renderCart();
 
   document.addEventListener("click", event => {
-    const categoryButton = event.target.closest("[data-category]");
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+
+    const categoryButton = target.closest("[data-category]");
     if (categoryButton) {
       openCategory(categoryButton.dataset.category);
       return;
     }
 
-    const productButton = event.target.closest("[data-open-product]");
+    const productButton = target.closest("[data-open-product]");
     if (productButton) {
       event.stopPropagation();
       openProduct(productButton.dataset.openProduct);
       return;
     }
 
-    const productCard = event.target.closest("[data-product]");
-    if (productCard && !event.target.closest("button")) {
+    const productCard = target.closest("[data-product]");
+    if (productCard && !target.closest("button")) {
       openProduct(productCard.dataset.product);
       return;
     }
 
-    const backButton = event.target.closest("[data-back]");
+    const backButton = target.closest("[data-back]");
     if (backButton) {
       showPage(backButton.dataset.back);
       return;
     }
 
-    const removeButton = event.target.closest("[data-remove]");
+    const removeButton = target.closest("[data-remove]");
     if (removeButton) {
       cart = cart.filter(product => product.id !== removeButton.dataset.remove);
       renderCart();
@@ -380,8 +399,8 @@ function initBigzero() {
       return;
     }
 
-    if (event.target.closest("#emptyCartBrowse")) {
-      showPage("homePage");
+    if (target.closest("#emptyCartBrowse")) {
+      enterShop();
     }
   });
 }
