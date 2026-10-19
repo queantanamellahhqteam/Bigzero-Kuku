@@ -302,8 +302,7 @@ function initBigzero() {
       showPage("homePage");
     };
   }
-
-
+  
   const browseButton = $("browseBtn");
   if (browseButton) {
     browseButton.addEventListener("click", () => showPage("homePage"));
