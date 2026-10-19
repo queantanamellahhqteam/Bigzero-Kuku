@@ -286,15 +286,26 @@ function submitOrder(event) {
     `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
+
 function initBigzero() {
-  const enterButton = $("enterBtn");
+  const enterButton = document.getElementById("enterBtn");
+  const splash = document.getElementById("splash");
+  const homePage = document.getElementById("homePage");
 
   if (enterButton) {
-    enterButton.addEventListener("click", () => {
-      if ($("splash")) $("splash").classList.add("hide");
-      showPage("homePage");
+    enterButton.addEventListener("click", function () {
+      if (splash) {
+        splash.classList.add("hide");
+      }
+
+      if (homePage) {
+        homePage.style.display = "block";
+        homePage.scrollIntoView({ behavior: "smooth" });
+      }
     });
   }
+}
+
 
   const browseButton = $("browseBtn");
   if (browseButton) {
