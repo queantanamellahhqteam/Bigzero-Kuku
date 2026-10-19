@@ -302,7 +302,6 @@ function initBigzero() {
       showPage("homePage");
     };
   }
-}
 
 
   const browseButton = $("browseBtn");
