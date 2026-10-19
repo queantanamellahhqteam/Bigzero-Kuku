@@ -287,22 +287,20 @@ function submitOrder(event) {
 }
 
 
+
 function initBigzero() {
   const enterButton = document.getElementById("enterBtn");
-  const splash = document.getElementById("splash");
-  const homePage = document.getElementById("homePage");
 
   if (enterButton) {
-    enterButton.addEventListener("click", function () {
+    enterButton.onclick = function () {
+      const splash = document.getElementById("splash");
+
       if (splash) {
         splash.classList.add("hide");
       }
 
-      if (homePage) {
-        homePage.style.display = "block";
-        homePage.scrollIntoView({ behavior: "smooth" });
-      }
-    });
+      showPage("homePage");
+    };
   }
 }
 
