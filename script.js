@@ -8,30 +8,37 @@ const categories = [
   {
     id: "nyama",
     name: "Nyama ya Kuku",
-    description: "Kuku mzima, nusu na mix.",
+    description: "Kuku nyama, kuku mzima, kuku wa kienyeji na mix.",
     icon: "🍗",
-    products: ["whole", "half", "mix-quarter", "mix-half"]
+    products: [
+      "whole", "half", "chicken-meat",
+      "layers-chicken", "kienyeji-chicken",
+      "mix-quarter", "mix-half"
+    ]
   },
   {
     id: "vipande",
-    name: "Kidari na Mapaja",
-    description: "Kidari, mapaja madogo na makubwa.",
+    name: "Mapaja na Vipande",
+    description: "Mapaja, migongo, shingo na vidari.",
     icon: "🍖",
-    products: ["breast", "small-thighs", "large-thighs"]
+    products: [
+      "small-thighs", "large-thighs",
+      "backs", "necks", "breasts"
+    ]
   },
   {
     id: "ndani",
-    name: "Maini, Firigisi na Utumbo",
-    description: "Bidhaa za ndani ya kuku.",
+    name: "Maini na Firigisi",
+    description: "Maini na firigisi za kuku.",
     icon: "🥩",
-    products: ["liver", "gizzards", "intestines"]
+    products: ["liver", "gizzards"]
   },
   {
     id: "nyingine",
-    name: "Miguu, Shingo na Mayai",
-    description: "Miguu, shingo na mayai ya kuku.",
+    name: "Miguu, Utumbo na Mayai",
+    description: "Miguu ya kuku, utumbo na mayai ya kienyeji.",
     icon: "🥚",
-    products: ["feet", "neck", "eggs"]
+    products: ["intestines", "feet", "eggs", "eggs-tray"]
   },
   {
     id: "bigzero",
@@ -50,7 +57,7 @@ const products = {
     unit: "Kg",
     icon: "🍗",
     image: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=900&q=85",
-    description: "Kuku mzima. Bei kwa kilo."
+    description: "Kuku mzima. Bei ni TSh 12,000 kwa kilo."
   },
 
   half: {
@@ -61,6 +68,16 @@ const products = {
     icon: "🍗",
     image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
     description: "Kifurushi cha kuku nusu."
+  },
+
+  "chicken-meat": {
+    id: "chicken-meat",
+    name: "Kuku Nyama (1.3 kg)",
+    price: 12000,
+    unit: "kuku",
+    icon: "🍗",
+    image: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=900&q=85",
+    description: "Kuku nyama wa takribani kilo 1.3. TSh 12,000 kwa kuku mmoja."
   },
 
   "mix-quarter": {
@@ -83,16 +100,6 @@ const products = {
     description: "Kifurushi cha Kuku Mix nusu."
   },
 
-  breast: {
-    id: "breast",
-    name: "Kidari cha Kuku",
-    price: null,
-    unit: "Kg",
-    icon: "🍗",
-    image: "https://loremflickr.com/900/700/chicken,breast",
-    description: "Kidari cha kuku. Uliza bei kupitia WhatsApp."
-  },
-
   "small-thighs": {
     id: "small-thighs",
     name: "Mapaja Madogo",
@@ -100,7 +107,7 @@ const products = {
     unit: "Kg",
     icon: "🍖",
     image: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=85",
-    description: "Mapaja madogo ya kuku."
+    description: "Mapaja madogo ya kuku. TSh 10,000 kwa kilo."
   },
 
   "large-thighs": {
@@ -110,17 +117,49 @@ const products = {
     unit: "Kg",
     icon: "🍖",
     image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=85",
-    description: "Mapaja makubwa ya kuku."
+    description: "Mapaja makubwa ya kuku. TSh 10,000 kwa kilo."
+  },
+
+  backs: {
+    id: "backs",
+    name: "Migongo",
+    price: 7000,
+    unit: "Kg",
+    icon: "🍗",
+    image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
+    description: "Migongo ya kuku. TSh 7,000 kwa kilo."
+  },
+
+  necks: {
+    id: "necks",
+    name: "Shingo",
+    price: 7000,
+    unit: "Kg",
+    icon: "🍗",
+    image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
+    description: "Shingo za kuku. TSh 7,000 kwa kilo."
+  },
+
+  breasts: {
+    id: "breasts",
+    name: "Vidari",
+    price: 10000,
+    unit: "Kg",
+    icon: "🍖",
+    image: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=85",
+    description: "Vidari vya kuku. TSh 10,000 kwa kilo."
   },
 
   liver: {
     id: "liver",
     name: "Maini",
-    price: 12000,
+    price: 7500,
     unit: "Kg",
     icon: "🥩",
     image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=900&q=85",
-    description: "Maini ya kuku. Bei kwa kilo."
+    description: "Maini ya kuku. TSh 7,500 kwa kilo; unaweza kununua kuanzia nusu kilo.",
+    minQty: 0.5,
+    step: 0.5
   },
 
   gizzards: {
@@ -130,7 +169,7 @@ const products = {
     unit: "Kg",
     icon: "🥩",
     image: "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?auto=format&fit=crop&w=900&q=85",
-    description: "Firigisi za kuku. Bei kwa kilo."
+    description: "Firigisi za kuku. TSh 7,000 kwa kilo."
   },
 
   intestines: {
@@ -139,8 +178,8 @@ const products = {
     price: 5000,
     unit: "Kg",
     icon: "🍲",
-    image: "https://loremflickr.com/900/700/chicken,intestines",
-    description: "Utumbo wa kuku. Bei kwa kilo."
+    image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=900&q=85",
+    description: "Utumbo wa kuku. TSh 5,000 kwa kilo."
   },
 
   feet: {
@@ -149,28 +188,48 @@ const products = {
     price: 5000,
     unit: "Kg",
     icon: "🍗",
-    image: "https://loremflickr.com/900/700/chicken,feet",
-    description: "Miguu ya kuku. Bei kwa kilo."
-  },
-
-  neck: {
-    id: "neck",
-    name: "Shingo za Kuku",
-    price: null,
-    unit: "Kg",
-    icon: "🍗",
-    image: "https://loremflickr.com/900/700/chicken,neck",
-    description: "Shingo za kuku. Uliza bei kupitia WhatsApp."
+    image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
+    description: "Miguu ya kuku. TSh 5,000 kwa kilo."
   },
 
   eggs: {
     id: "eggs",
-    name: "Mayai",
-    price: null,
-    unit: "trei",
+    name: "Yai la Kienyeji",
+    price: 800,
+    unit: "yai",
     icon: "🥚",
     image: "https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=900&q=85",
-    description: "Uliza bei na ukubwa wa trei kupitia WhatsApp."
+    description: "Yai moja la kienyeji ni TSh 800."
+  },
+
+  "eggs-tray": {
+    id: "eggs-tray",
+    name: "Trei ya Mayai ya Kienyeji",
+    price: 24000,
+    unit: "trei (mayai 30)",
+    icon: "🥚",
+    image: "https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=900&q=85",
+    description: "Trei moja ina mayai 30. Bei ni TSh 24,000."
+  },
+
+  "layers-chicken": {
+    id: "layers-chicken",
+    name: "Kuku wa Mayai",
+    price: 18000,
+    unit: "kuku",
+    icon: "🐔",
+    image: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=900&q=85",
+    description: "Kuku wa mayai. TSh 18,000 kwa kuku mmoja."
+  },
+
+  "kienyeji-chicken": {
+    id: "kienyeji-chicken",
+    name: "Kuku wa Kienyeji",
+    price: 30000,
+    unit: "kuku",
+    icon: "🐔",
+    image: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=900&q=85",
+    description: "Kuku wa kienyeji. TSh 30,000 kwa kuku mmoja."
   },
 
   "zagga-half": {
@@ -198,14 +257,43 @@ let cart = [];
 let currentProduct = null;
 
 const $ = id => document.getElementById(id);
-const money = amount => "TSh " + Number(amount).toLocaleString("en-US");
+
+const money = amount =>
+  "TSh " + Number(amount).toLocaleString("en-US");
+
+function formatQty(value) {
+  return Number(value).toLocaleString("en-US", {
+    maximumFractionDigits: 2
+  });
+}
 
 function showPage(id) {
+  const target = $(id);
+
+  if (!target) {
+    console.error("BIGZERO KUKU: Ukurasa haujapatikana:", id);
+    return;
+  }
+
   document.querySelectorAll(".page").forEach(page => {
     page.classList.toggle("active", page.id === id);
   });
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: "auto" });
+}
+
+function enterShop() {
+  const splash = $("splash");
+  const home = $("homePage");
+
+  if (!home) {
+    alert("Ukurasa wa homePage haujapatikana. Hakikisha index.html ina id=\"homePage\".");
+    return;
+  }
+
+  if (splash) splash.classList.add("hide");
+
+  showPage("homePage");
 }
 
 function productImage(product) {
@@ -225,11 +313,7 @@ function renderCategories() {
   if (!grid) return;
 
   grid.innerHTML = categories.map(category => `
-    <button
-      type="button"
-      class="category-card"
-      data-category="${category.id}"
-    >
+    <button type="button" class="category-card" data-category="${category.id}">
       <div class="category-visual">${category.icon}</div>
       <div class="category-info">
         <h3>${category.name}</h3>
@@ -255,41 +339,22 @@ function openCategory(id) {
   const grid = $("productGrid");
 
   if (!grid) {
-    alert("Sehemu ya bidhaa haijapatikana. Tafadhali hakiki index.html.");
+    alert("Sehemu ya bidhaa haijapatikana kwenye index.html.");
     return;
   }
 
   grid.innerHTML = category.products.map(productId => {
     const product = products[productId];
+    if (!product) return "";
 
     return `
-      <article
-        class="product-card"
-        data-product="${product.id}"
-        tabindex="0"
-      >
-        <div class="product-visual">
-          ${productImage(product)}
-        </div>
-
+      <article class="product-card" data-product="${product.id}" tabindex="0">
+        <div class="product-visual">${productImage(product)}</div>
         <div class="product-info">
           <h3>${product.name}</h3>
-
-          <div class="price">
-            ${
-              product.price === null
-                ? "Uliza bei"
-                : money(product.price) + " / " + product.unit
-            }
-          </div>
-
+          <div class="price">${money(product.price)} / ${product.unit}</div>
           <p>${product.description}</p>
-
-          <button
-            type="button"
-            class="small-btn"
-            data-open-product="${product.id}"
-          >
+          <button type="button" class="small-btn" data-open-product="${product.id}">
             Tazama bidhaa →
           </button>
         </div>
@@ -313,23 +378,19 @@ function openProduct(id) {
     return;
   }
 
+  const minQty = product.minQty || 1;
+  const step = product.step || 1;
+
   detail.innerHTML = `
     <div class="detail-layout">
-      <div class="detail-art">
-        ${productImage(product)}
-      </div>
+      <div class="detail-art">${productImage(product)}</div>
 
       <div class="detail-copy">
         <span class="eyebrow">BIGZERO KUKU</span>
-
         <h2>${product.name}</h2>
 
         <p class="detail-price">
-          ${
-            product.price === null
-              ? "Bei: Uliza WhatsApp"
-              : money(product.price) + " / " + product.unit
-          }
+          ${money(product.price)} / ${product.unit}
         </p>
 
         <p class="muted">${product.description}</p>
@@ -340,37 +401,25 @@ function openProduct(id) {
           <input
             id="detailQty"
             type="number"
-            min="1"
-            step="1"
-            value="1"
+            min="${minQty}"
+            step="${step}"
+            value="${minQty}"
+            inputmode="decimal"
+            required
           >
           <span>${product.unit}</span>
         </div>
 
         <div class="total-box">
           <span>Jumla ya bidhaa hii</span>
-          <strong id="detailTotal">
-            ${
-              product.price === null
-                ? "Thibitisha bei"
-                : money(product.price)
-            }
-          </strong>
+          <strong id="detailTotal">${money(product.price * minQty)}</strong>
         </div>
 
-        <button
-          type="button"
-          id="addToCartBtn"
-          class="btn yellow full"
-        >
+        <button type="button" id="addToCartBtn" class="btn yellow full">
           WEKA KWENYE KIKAPU
         </button>
 
-        <button
-          type="button"
-          id="buyNowBtn"
-          class="btn dark full"
-        >
+        <button type="button" id="buyNowBtn" class="btn dark full">
           ENDELEA NA ODA →
         </button>
       </div>
@@ -394,16 +443,27 @@ function quantity() {
   const input = $("detailQty");
   const value = Number(input ? input.value : 1);
 
-  return Number.isInteger(value) && value > 0 ? value : 1;
+  if (!currentProduct) return 1;
+
+  const step = currentProduct.step || 1;
+  const minQty = currentProduct.minQty || 1;
+
+  if (!Number.isFinite(value) || value < minQty) {
+    return minQty;
+  }
+
+  const rounded = Math.round(value / step) * step;
+
+  return Number(Math.max(minQty, rounded).toFixed(2));
 }
 
 function updateDetailTotal() {
   if (!currentProduct || !$("detailTotal")) return;
 
+  const qty = quantity();
+
   $("detailTotal").textContent =
-    currentProduct.price === null
-      ? "Thibitisha bei"
-      : money(currentProduct.price * quantity());
+    money(currentProduct.price * qty);
 }
 
 function addToCart(goToCheckout) {
@@ -412,10 +472,16 @@ function addToCart(goToCheckout) {
   const product = currentProduct;
   const qty = quantity();
 
+  const input = $("detailQty");
+
+  if (input) {
+    input.value = qty;
+  }
+
   const existing = cart.find(item => item.id === product.id);
 
   if (existing) {
-    existing.qty += qty;
+    existing.qty = Number((existing.qty + qty).toFixed(2));
   } else {
     cart.push({ ...product, qty });
   }
@@ -433,11 +499,7 @@ function addToCart(goToCheckout) {
 
 function cartTotal() {
   return cart.reduce((sum, product) => {
-    return sum + (
-      product.price === null
-        ? 0
-        : product.price * product.qty
-    );
+    return sum + product.price * product.qty;
   }, 0);
 }
 
@@ -459,11 +521,7 @@ function renderCart() {
   if (!cart.length) {
     items.innerHTML = `
       <p class="muted">Kikapu chako bado hakina bidhaa.</p>
-      <button
-        type="button"
-        class="btn yellow full"
-        id="emptyCartBrowse"
-      >
+      <button type="button" class="btn yellow full" id="emptyCartBrowse">
         Chagua bidhaa
       </button>
     `;
@@ -476,15 +534,11 @@ function renderCart() {
 
       <div class="cart-line-info">
         <strong>${product.name}</strong>
-        <small>Kiasi: ${product.qty} ${product.unit}</small>
-        <br>
         <small>
-          ${
-            product.price === null
-              ? "Bei itathibitishwa"
-              : money(product.price * product.qty)
-          }
+          Kiasi: ${formatQty(product.qty)} ${product.unit}
         </small>
+        <br>
+        <small>${money(product.price * product.qty)}</small>
       </div>
 
       <button
@@ -492,9 +546,7 @@ function renderCart() {
         class="remove-btn"
         data-remove="${product.id}"
         aria-label="Ondoa bidhaa"
-      >
-        ✕
-      </button>
+      >✕</button>
     </div>
   `).join("");
 }
@@ -519,24 +571,14 @@ function submitOrder(event) {
   if (!form || !form.reportValidity()) return;
 
   const data = new FormData(form);
-
   const value = key => String(data.get(key) || "").trim();
 
   const lines = cart.map(product => {
-    if (product.price === null) {
-      return `• ${product.name}: ${product.qty} ${product.unit} — BEI ITHIBITISHWE`;
-    }
+    const qty = formatQty(product.qty);
+    const amount = money(product.price * product.qty);
 
-    return `• ${product.name}: ${product.qty} ${product.unit} × ${money(product.price)} = ${money(product.price * product.qty)}`;
+    return `• ${product.name}: ${qty} ${product.unit} × ${money(product.price)} = ${amount}`;
   });
-
-  const unpriced = cart.some(product => product.price === null);
-
-  const total = money(cartTotal()) + (
-    unpriced
-      ? " (bila bidhaa ambazo bei zake hazijathibitishwa)"
-      : ""
-  );
 
   const message = [
     "🛒 ODA MPYA — BIGZERO KUKU",
@@ -547,7 +589,7 @@ function submitOrder(event) {
     "BIDHAA ZILIZOAGIZWA:",
     ...lines,
     "",
-    `Jumla ya bidhaa: ${total}`,
+    `Jumla ya bidhaa: ${money(cartTotal())}`,
     "",
     "ENEO LA KUFIKISHIWA:",
     `Mkoa/Jiji: ${value("region")}`,
@@ -571,27 +613,22 @@ function initBigzero() {
   const enterButton = $("enterBtn");
 
   if (enterButton) {
-    enterButton.addEventListener("click", () => {
-      if ($("splash")) $("splash").classList.add("hide");
-      showPage("homePage");
+    enterButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      enterShop();
     });
   }
 
   const browseButton = $("browseBtn");
 
   if (browseButton) {
-    browseButton.addEventListener("click", () => {
-      showPage("homePage");
-    });
+    browseButton.addEventListener("click", enterShop);
   }
 
   const homeLogo = $("homeLogo");
 
   if (homeLogo) {
-    homeLogo.addEventListener("click", () => {
-      if ($("splash")) $("splash").classList.add("hide");
-      showPage("homePage");
-    });
+    homeLogo.addEventListener("click", enterShop);
   }
 
   const cartButton = $("cartBtn");
@@ -609,7 +646,7 @@ function initBigzero() {
     checkoutButton.addEventListener("click", () => {
       if (!cart.length) {
         alert("Kikapu chako bado hakina bidhaa. Tafadhali chagua bidhaa kwanza.");
-        showPage("homePage");
+        enterShop();
         return;
       }
 
@@ -624,24 +661,26 @@ function initBigzero() {
     form.addEventListener("submit", submitOrder);
   }
 
-  const year = $("year");
-
-  if (year) {
-    year.textContent = new Date().getFullYear();
+  if ($("year")) {
+    $("year").textContent = new Date().getFullYear();
   }
 
   renderCategories();
   renderCart();
 
   document.addEventListener("click", event => {
-    const categoryButton = event.target.closest("[data-category]");
+    const target = event.target;
+
+    if (!(target instanceof Element)) return;
+
+    const categoryButton = target.closest("[data-category]");
 
     if (categoryButton) {
       openCategory(categoryButton.dataset.category);
       return;
     }
 
-    const productButton = event.target.closest("[data-open-product]");
+    const productButton = target.closest("[data-open-product]");
 
     if (productButton) {
       event.stopPropagation();
@@ -649,21 +688,21 @@ function initBigzero() {
       return;
     }
 
-    const card = event.target.closest("[data-product]");
+    const productCard = target.closest("[data-product]");
 
-    if (card && !event.target.closest("button")) {
-      openProduct(card.dataset.product);
+    if (productCard && !target.closest("button")) {
+      openProduct(productCard.dataset.product);
       return;
     }
 
-    const backButton = event.target.closest("[data-back]");
+    const backButton = target.closest("[data-back]");
 
     if (backButton) {
       showPage(backButton.dataset.back);
       return;
     }
 
-    const removeButton = event.target.closest("[data-remove]");
+    const removeButton = target.closest("[data-remove]");
 
     if (removeButton) {
       cart = cart.filter(
@@ -675,8 +714,8 @@ function initBigzero() {
       return;
     }
 
-    if (event.target.closest("#emptyCartBrowse")) {
-      showPage("homePage");
+    if (target.closest("#emptyCartBrowse")) {
+      enterShop();
     }
   });
 }
