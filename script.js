@@ -8,52 +8,39 @@ const categories = [
   {
     id: "nyama",
     name: "Nyama ya Kuku",
-    description: "Kuku mzima, nusu na vifurushi vya mix.",
+    description: "Kuku mzima, nusu na mix.",
     icon: "🍗",
     products: ["whole", "half", "mix-quarter", "mix-half"]
   },
   {
     id: "vipande",
-    name: "Mapaja na Vipande",
-    description: "Mapaja, vifua na vipande vya kuku.",
+    name: "Kidari na Mapaja",
+    description: "Kidari, mapaja madogo na makubwa.",
     icon: "🍖",
-    products: ["small-thighs", "large-thighs", "breast", "wings"]
+    products: ["breast", "small-thighs", "large-thighs"]
   },
   {
     id: "ndani",
-    name: "Maini na Firigisi",
-    description: "Maini, firigisi na utumbo wa kuku.",
+    name: "Maini, Firigisi na Utumbo",
+    description: "Bidhaa za ndani ya kuku.",
     icon: "🥩",
-    products: ["liver", "gizzards", "intestines", "feet"]
+    products: ["liver", "gizzards", "intestines"]
   },
   {
-    id: "mayai",
-    name: "Mayai ya Kuku",
-    description: "Mayai ya kawaida na ya kienyeji.",
+    id: "nyingine",
+    name: "Miguu, Shingo na Mayai",
+    description: "Miguu, shingo na mayai ya kuku.",
     icon: "🥚",
-    products: ["eggs", "eggs-tray", "local-egg"]
-  },
-  {
-    id: "kienyeji",
-    name: "Kuku wa Kienyeji na Kufuga",
-    description: "Kuku wa kienyeji na kuku wa mayai.",
-    icon: "🐓",
-    products: ["local-chicken", "laying-hens"]
+    products: ["feet", "neck", "eggs"]
   },
   {
     id: "bigzero",
     name: "Bigzero Zagga",
-    description: "Chagua kifurushi cha Bigzero Zagga.",
+    description: "Chagua kifurushi cha Zagga.",
     icon: "📦",
     products: ["zagga-half", "zagga-quarter"]
   }
 ];
-
-/*
-  PICHA:
-  Hizi ni picha za mfano kutoka Unsplash.
-  Baadhi zinaweza kuhitaji kubadilishwa ikiwa hazifunguki.
-*/
 
 const products = {
   whole: {
@@ -96,6 +83,16 @@ const products = {
     description: "Kifurushi cha Kuku Mix nusu."
   },
 
+  breast: {
+    id: "breast",
+    name: "Kidari cha Kuku",
+    price: null,
+    unit: "Kg",
+    icon: "🍗",
+    image: "https://loremflickr.com/900/700/chicken,breast",
+    description: "Kidari cha kuku. Uliza bei kupitia WhatsApp."
+  },
+
   "small-thighs": {
     id: "small-thighs",
     name: "Mapaja Madogo",
@@ -114,26 +111,6 @@ const products = {
     icon: "🍖",
     image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=85",
     description: "Mapaja makubwa ya kuku."
-  },
-
-  breast: {
-    id: "breast",
-    name: "Kifua cha Kuku (Vidari)",
-    price: null,
-    unit: "Kg",
-    icon: "🍗",
-    image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
-    description: "Vifua vya kuku. Uliza bei kupitia WhatsApp."
-  },
-
-  wings: {
-    id: "wings",
-    name: "Mabawa ya Kuku",
-    price: null,
-    unit: "Kg",
-    icon: "🍗",
-    image: "https://images.unsplash.com/photo-1608039829572-78524f79c4c7?auto=format&fit=crop&w=900&q=85",
-    description: "Mabawa ya kuku. Uliza bei kupitia WhatsApp."
   },
 
   liver: {
@@ -162,7 +139,7 @@ const products = {
     price: 5000,
     unit: "Kg",
     icon: "🍲",
-    image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=900&q=85",
+    image: "https://loremflickr.com/900/700/chicken,intestines",
     description: "Utumbo wa kuku. Bei kwa kilo."
   },
 
@@ -172,58 +149,28 @@ const products = {
     price: 5000,
     unit: "Kg",
     icon: "🍗",
-    image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
+    image: "https://loremflickr.com/900/700/chicken,feet",
     description: "Miguu ya kuku. Bei kwa kilo."
+  },
+
+  neck: {
+    id: "neck",
+    name: "Shingo za Kuku",
+    price: null,
+    unit: "Kg",
+    icon: "🍗",
+    image: "https://loremflickr.com/900/700/chicken,neck",
+    description: "Shingo za kuku. Uliza bei kupitia WhatsApp."
   },
 
   eggs: {
     id: "eggs",
-    name: "Mayai ya Kuku",
+    name: "Mayai",
     price: null,
     unit: "trei",
     icon: "🥚",
     image: "https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=900&q=85",
-    description: "Mayai ya kuku. Uliza bei na ukubwa wa trei."
-  },
-
-  "eggs-tray": {
-    id: "eggs-tray",
-    name: "Trei ya Mayai 30",
-    price: null,
-    unit: "trei",
-    icon: "🥚",
-    image: "https://images.unsplash.com/photo-1518569656558-1f25e69d93d7?auto=format&fit=crop&w=900&q=85",
-    description: "Trei yenye mayai 30. Thibitisha bei kupitia WhatsApp."
-  },
-
-  "local-egg": {
-    id: "local-egg",
-    name: "Yai la Kienyeji",
-    price: null,
-    unit: "yai",
-    icon: "🥚",
-    image: "https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?auto=format&fit=crop&w=900&q=85",
-    description: "Mayai ya kienyeji. Uliza bei."
-  },
-
-  "local-chicken": {
-    id: "local-chicken",
-    name: "Kuku wa Kienyeji",
-    price: null,
-    unit: "kuku",
-    icon: "🐓",
-    image: "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=900&q=85",
-    description: "Kuku wa kienyeji. Bei hutegemea ukubwa."
-  },
-
-  "laying-hens": {
-    id: "laying-hens",
-    name: "Kuku wa Mayai",
-    price: null,
-    unit: "kuku",
-    icon: "🐔",
-    image: "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=900&q=85",
-    description: "Kuku wa kufuga kwa ajili ya uzalishaji wa mayai. Uliza bei na upatikanaji."
+    description: "Uliza bei na ukubwa wa trei kupitia WhatsApp."
   },
 
   "zagga-half": {
@@ -251,9 +198,7 @@ let cart = [];
 let currentProduct = null;
 
 const $ = id => document.getElementById(id);
-
-const money = amount =>
-  "TSh " + Number(amount).toLocaleString("en-US");
+const money = amount => "TSh " + Number(amount).toLocaleString("en-US");
 
 function showPage(id) {
   document.querySelectorAll(".page").forEach(page => {
@@ -271,9 +216,7 @@ function productImage(product) {
       loading="lazy"
       onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
     >
-    <span class="fallback-emoji" style="display:none">
-      ${product.icon}
-    </span>
+    <span class="fallback-emoji" style="display:none">${product.icon}</span>
   `;
 }
 
@@ -288,7 +231,6 @@ function renderCategories() {
       data-category="${category.id}"
     >
       <div class="category-visual">${category.icon}</div>
-
       <div class="category-info">
         <h3>${category.name}</h3>
         <p>${category.description}</p>
@@ -319,7 +261,6 @@ function openCategory(id) {
 
   grid.innerHTML = category.products.map(productId => {
     const product = products[productId];
-    if (!product) return "";
 
     return `
       <article
@@ -335,9 +276,11 @@ function openCategory(id) {
           <h3>${product.name}</h3>
 
           <div class="price">
-            ${product.price === null
-              ? "Uliza bei"
-              : money(product.price) + " / " + product.unit}
+            ${
+              product.price === null
+                ? "Uliza bei"
+                : money(product.price) + " / " + product.unit
+            }
           </div>
 
           <p>${product.description}</p>
@@ -364,6 +307,7 @@ function openProduct(id) {
   currentProduct = product;
 
   const detail = $("productDetail");
+
   if (!detail) {
     alert("Sehemu ya maelezo ya bidhaa haijapatikana.");
     return;
@@ -381,9 +325,11 @@ function openProduct(id) {
         <h2>${product.name}</h2>
 
         <p class="detail-price">
-          ${product.price === null
-            ? "Bei: Uliza WhatsApp"
-            : money(product.price) + " / " + product.unit}
+          ${
+            product.price === null
+              ? "Bei: Uliza WhatsApp"
+              : money(product.price) + " / " + product.unit
+          }
         </p>
 
         <p class="muted">${product.description}</p>
@@ -404,9 +350,11 @@ function openProduct(id) {
         <div class="total-box">
           <span>Jumla ya bidhaa hii</span>
           <strong id="detailTotal">
-            ${product.price === null
-              ? "Thibitisha bei"
-              : money(product.price)}
+            ${
+              product.price === null
+                ? "Thibitisha bei"
+                : money(product.price)
+            }
           </strong>
         </div>
 
@@ -531,9 +479,11 @@ function renderCart() {
         <small>Kiasi: ${product.qty} ${product.unit}</small>
         <br>
         <small>
-          ${product.price === null
-            ? "Bei itathibitishwa"
-            : money(product.price * product.qty)}
+          ${
+            product.price === null
+              ? "Bei itathibitishwa"
+              : money(product.price * product.qty)
+          }
         </small>
       </div>
 
@@ -565,12 +515,12 @@ function submitOrder(event) {
   }
 
   const form = $("orderForm");
+
   if (!form || !form.reportValidity()) return;
 
   const data = new FormData(form);
 
-  const value = key =>
-    String(data.get(key) || "").trim();
+  const value = key => String(data.get(key) || "").trim();
 
   const lines = cart.map(product => {
     if (product.price === null) {
@@ -582,11 +532,11 @@ function submitOrder(event) {
 
   const unpriced = cart.some(product => product.price === null);
 
-  const total =
-    money(cartTotal()) +
-    (unpriced
+  const total = money(cartTotal()) + (
+    unpriced
       ? " (bila bidhaa ambazo bei zake hazijathibitishwa)"
-      : "");
+      : ""
+  );
 
   const message = [
     "🛒 ODA MPYA — BIGZERO KUKU",
