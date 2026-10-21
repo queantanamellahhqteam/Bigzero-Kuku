@@ -4,6 +4,18 @@
 
 const WHATSAPP_NUMBER = "255654929267";
 
+// Picha za mfano kutoka Unsplash
+const IMAGES = {
+  chicken: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=900&q=85",
+  rawChicken: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
+  pieces: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=85",
+  cookedChicken: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=85",
+  liver: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=900&q=85",
+  gizzards: "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?auto=format&fit=crop&w=900&q=85",
+  mix: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=85",
+  eggs: "https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=900&q=85"
+};
+
 const categories = [
   {
     id: "nyama",
@@ -56,8 +68,8 @@ const products = {
     price: 12000,
     unit: "Kg",
     icon: "🍗",
-    image: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=900&q=85",
-    description: "Kuku mzima. Bei ni TSh 12,000 kwa kilo."
+    image: IMAGES.chicken,
+    description: "Kuku mzima. TSh 12,000 kwa kilo."
   },
 
   half: {
@@ -66,7 +78,7 @@ const products = {
     price: 6000,
     unit: "kipande",
     icon: "🍗",
-    image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.rawChicken,
     description: "Kifurushi cha kuku nusu."
   },
 
@@ -76,7 +88,7 @@ const products = {
     price: 12000,
     unit: "kuku",
     icon: "🍗",
-    image: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.chicken,
     description: "Kuku nyama wa takribani kilo 1.3. TSh 12,000 kwa kuku mmoja."
   },
 
@@ -86,7 +98,7 @@ const products = {
     price: 4500,
     unit: "kifurushi",
     icon: "🍗",
-    image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.mix,
     description: "Kifurushi cha Kuku Mix robo."
   },
 
@@ -96,7 +108,7 @@ const products = {
     price: 9000,
     unit: "kifurushi",
     icon: "🍗",
-    image: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.pieces,
     description: "Kifurushi cha Kuku Mix nusu."
   },
 
@@ -106,7 +118,7 @@ const products = {
     price: 10000,
     unit: "Kg",
     icon: "🍖",
-    image: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.pieces,
     description: "Mapaja madogo ya kuku. TSh 10,000 kwa kilo."
   },
 
@@ -116,7 +128,7 @@ const products = {
     price: 10000,
     unit: "Kg",
     icon: "🍖",
-    image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.cookedChicken,
     description: "Mapaja makubwa ya kuku. TSh 10,000 kwa kilo."
   },
 
@@ -126,7 +138,7 @@ const products = {
     price: 7000,
     unit: "Kg",
     icon: "🍗",
-    image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.rawChicken,
     description: "Migongo ya kuku. TSh 7,000 kwa kilo."
   },
 
@@ -136,7 +148,7 @@ const products = {
     price: 7000,
     unit: "Kg",
     icon: "🍗",
-    image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.rawChicken,
     description: "Shingo za kuku. TSh 7,000 kwa kilo."
   },
 
@@ -146,7 +158,7 @@ const products = {
     price: 10000,
     unit: "Kg",
     icon: "🍖",
-    image: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.pieces,
     description: "Vidari vya kuku. TSh 10,000 kwa kilo."
   },
 
@@ -156,8 +168,8 @@ const products = {
     price: 7500,
     unit: "Kg",
     icon: "🥩",
-    image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=900&q=85",
-    description: "Maini ya kuku. TSh 7,500 kwa kilo; unaweza kununua kuanzia nusu kilo.",
+    image: IMAGES.liver,
+    description: "Maini ya kuku. TSh 7,500 kwa kilo; unaweza kununua nusu kilo.",
     minQty: 0.5,
     step: 0.5
   },
@@ -168,7 +180,7 @@ const products = {
     price: 7000,
     unit: "Kg",
     icon: "🥩",
-    image: "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.gizzards,
     description: "Firigisi za kuku. TSh 7,000 kwa kilo."
   },
 
@@ -178,7 +190,7 @@ const products = {
     price: 5000,
     unit: "Kg",
     icon: "🍲",
-    image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.rawChicken,
     description: "Utumbo wa kuku. TSh 5,000 kwa kilo."
   },
 
@@ -188,7 +200,7 @@ const products = {
     price: 5000,
     unit: "Kg",
     icon: "🍗",
-    image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.rawChicken,
     description: "Miguu ya kuku. TSh 5,000 kwa kilo."
   },
 
@@ -198,7 +210,7 @@ const products = {
     price: 800,
     unit: "yai",
     icon: "🥚",
-    image: "https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.eggs,
     description: "Yai moja la kienyeji ni TSh 800."
   },
 
@@ -208,7 +220,7 @@ const products = {
     price: 24000,
     unit: "trei (mayai 30)",
     icon: "🥚",
-    image: "https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.eggs,
     description: "Trei moja ina mayai 30. Bei ni TSh 24,000."
   },
 
@@ -218,7 +230,7 @@ const products = {
     price: 18000,
     unit: "kuku",
     icon: "🐔",
-    image: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.chicken,
     description: "Kuku wa mayai. TSh 18,000 kwa kuku mmoja."
   },
 
@@ -228,7 +240,7 @@ const products = {
     price: 30000,
     unit: "kuku",
     icon: "🐔",
-    image: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.chicken,
     description: "Kuku wa kienyeji. TSh 30,000 kwa kuku mmoja."
   },
 
@@ -238,7 +250,7 @@ const products = {
     price: 6000,
     unit: "kifurushi",
     icon: "📦",
-    image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.rawChicken,
     description: "Kifurushi cha Bigzero Zagga nusu."
   },
 
@@ -248,7 +260,7 @@ const products = {
     price: 3000,
     unit: "kifurushi",
     icon: "📦",
-    image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=85",
+    image: IMAGES.mix,
     description: "Kifurushi cha Bigzero Zagga robo."
   }
 };
@@ -287,7 +299,7 @@ function enterShop() {
   const home = $("homePage");
 
   if (!home) {
-    alert("Ukurasa wa homePage haujapatikana. Hakikisha index.html ina id=\"homePage\".");
+    alert('Ukurasa wa homePage haujapatikana. Hakikisha index.html ina id="homePage".');
     return;
   }
 
@@ -302,9 +314,12 @@ function productImage(product) {
       src="${product.image}"
       alt="${product.name}"
       loading="lazy"
-      onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
     >
-    <span class="fallback-emoji" style="display:none">${product.icon}</span>
+    <span
+      class="fallback-emoji"
+      style="display:none;align-items:center;justify-content:center;width:100%;height:100%;font-size:3rem"
+    >${product.icon}</span>
   `;
 }
 
@@ -473,10 +488,7 @@ function addToCart(goToCheckout) {
   const qty = quantity();
 
   const input = $("detailQty");
-
-  if (input) {
-    input.value = qty;
-  }
+  if (input) input.value = qty;
 
   const existing = cart.find(item => item.id === product.id);
 
@@ -505,9 +517,8 @@ function cartTotal() {
 
 function renderCart() {
   if ($("cartCount")) {
-    $("cartCount").textContent = cart.reduce(
-      (sum, product) => sum + product.qty,
-      0
+    $("cartCount").textContent = formatQty(
+      cart.reduce((sum, product) => sum + product.qty, 0)
     );
   }
 
