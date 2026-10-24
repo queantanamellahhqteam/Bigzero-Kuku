@@ -56,7 +56,7 @@ const products = {
     price: 12000,
     unit: "Kg",
     icon: "🍗",
-    image: "images/Kuku Mzima.PNG",
+    image: "images/kuku-mzima.PNG",
     description: "Kuku mzima. Bei ni TSh 12,000 kwa kilo."
   },
 
