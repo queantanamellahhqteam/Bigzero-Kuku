@@ -66,7 +66,7 @@ const products = {
     price: 6000,
     unit: "kipande",
     icon: "🍗",
-    image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
+    image: "images/kuku-nusu.jpg",
     description: "Kifurushi cha kuku nusu."
   },
 
