@@ -569,6 +569,15 @@ function submitOrder(event) {
 
   if (!form || !form.reportValidity()) return;
 
+    const phoneInput = $("customerPhone");
+  const phoneDigits = phoneInput ? phoneInput.value.replace(/\D/g, "") : "";
+
+  if (phoneDigits.length !== 10) {
+    alert("Namba ya simu lazima iwe na tarakimu 10 kamili. Mfano: 0712345678");
+    if (phoneInput) phoneInput.focus();
+    return;
+  }
+
   const data = new FormData(form);
   const value = key => String(data.get(key) || "").trim();
 
