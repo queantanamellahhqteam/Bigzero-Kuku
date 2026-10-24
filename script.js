@@ -1,4 +1,3 @@
-
 /* BIGZERO KUKU — script.js */
 "use strict";
 
@@ -609,6 +608,20 @@ function submitOrder(event) {
     `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
+function initPayment() {
+  const pay = $("payment");
+  const box = $("mobileMoneyBox");
+
+  if (!pay || !box) return;
+
+  const toggle = () => {
+    box.style.display = pay.value.indexOf("Simu") === 0 ? "block" : "none";
+  };
+
+  pay.addEventListener("change", toggle);
+  toggle();
+}
+
 function initBigzero() {
   const enterButton = $("enterBtn");
 
@@ -660,6 +673,8 @@ function initBigzero() {
   if (form) {
     form.addEventListener("submit", submitOrder);
   }
+
+  initPayment();
 
   if ($("year")) {
     $("year").textContent = new Date().getFullYear();
