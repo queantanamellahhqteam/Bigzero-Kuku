@@ -76,7 +76,7 @@ const products = {
     price: 12000,
     unit: "kuku",
     icon: "🍗",
-    image: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=900&q=85",
+    image: "kuku-nyama1.jpg",
     description: "Kuku nyama wa takribani kilo 1.3. TSh 12,000 kwa kuku mmoja."
   },
 
