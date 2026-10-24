@@ -86,7 +86,7 @@ const products = {
     price: 4500,
     unit: "kifurushi",
     icon: "🍗",
-    image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=85",
+    image: "images/mix1.JPG",
     description: "Kifurushi cha Kuku Mix robo."
   },
 
@@ -96,7 +96,7 @@ const products = {
     price: 9000,
     unit: "kifurushi",
     icon: "🍗",
-    image: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=900&q=85",
+    image: "images/mix2.JPG",
     description: "Kifurushi cha Kuku Mix nusu."
   },
 
@@ -238,8 +238,8 @@ const products = {
     price: 6000,
     unit: "kifurushi",
     icon: "📦",
-    image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
-    description: "Kifurushi cha Bigzero Zagga nusu."
+    image: "images/zagga1.JPG",
+    description: "Kifurushi cha Bigzero Zagga nusu inakuwa na mchanganyiko wa nyama za kuku kubwa."
   },
 
   "zagga-quarter": {
@@ -248,8 +248,8 @@ const products = {
     price: 3000,
     unit: "kifurushi",
     icon: "📦",
-    image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=85",
-    description: "Kifurushi cha Bigzero Zagga robo."
+    image: "images/zagga2.JPG",
+    description: "Kifurushi cha Bigzero Zagga robo inakuwa na mchanganyiko wa nyama za kuku kubwa."
   }
 };
 
