@@ -740,3 +740,9 @@ if (document.readyState === "loading") {
 } else {
   initBigzero();
 }
+
+document.addEventListener("input", function (e) {
+  if (e.target && e.target.id === "customerPhone") {
+    e.target.value = e.target.value.replace(/\D/g, "").slice(0, 10);
+  }
+});
