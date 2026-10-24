@@ -14,7 +14,10 @@
 <label for="address">Anwani au alama ya eneo *</label><textarea id="address" name="address" required placeholder="Eleza sehemu ya kufikishiwa mzigo"></textarea>
 <label for="deliveryDate">Tarehe ya kupokea *</label><input id="deliveryDate" name="deliveryDate" type="date" required>
 <label for="deliveryTime">Muda unaopendelea *</label><select id="deliveryTime" name="deliveryTime" required><option value="">Chagua muda</option><option>Asubuhi</option><option>Mchana</option><option>Jioni</option><option>Muda maalumu — nitafafanua WhatsApp</option></select>
-<label for="payment">Njia ya malipo unayopendelea</label><select id="payment" name="payment"><option>Thibitisha na BIGZERO KUKU</option><option>Mobile Money</option><option>Pesa taslimu</option></select>
+<label for="payment">Njia ya malipo *</label><select id="payment" name="payment" required><option value="">Chagua njia ya malipo</option><option>Pesa taslimu (nalipa mzigo ukifika)</option><option>Simu (Mix by Yas)</option></select>
+
+<div id="mobileMoneyBox" class="order-summary" style="display:none"><strong>Lipa kwa Mix by Yas:</strong><small>Namba: +255 654 929 267<br>Jina: Mbwana Ramadhan<br>Baada ya kulipa, tuma ujumbe wa uthibitisho WhatsApp.</small></div>
+
 <label for="notes">Maelezo ya ziada (si lazima)</label><textarea id="notes" name="notes" placeholder="Maelekezo mengine ya oda yako"></textarea>
 <div class="order-summary"><span>Jumla ya bidhaa</span><strong id="checkoutTotal">TSh 0</strong><small>Usafirishaji na muda wa kufikisha vitathibitishwa na BIGZERO KUKU.</small></div><button type="submit" class="btn green full">TUMA ODA WHATSAPP ↗</button></form></section></main>
 <footer><div class="footer-logo">BIGZERO KUKU</div><p>Kuku Bora, Bei Poa, Huduma ya Kweli.</p><a href="https://wa.me/255654929267" target="_blank" rel="noopener">Wasiliana nasi WhatsApp</a><p>© <span id="year"></span> BIGZERO KUKU</p></footer><a class="whatsapp-float" href="https://wa.me/255654929267" target="_blank" rel="noopener" aria-label="Wasiliana nasi WhatsApp">☏</a><script src="script.js?v=6"></script></body></html>
