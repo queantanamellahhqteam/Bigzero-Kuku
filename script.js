@@ -106,7 +106,7 @@ const products = {
     price: 10000,
     unit: "Kg",
     icon: "🍖",
-    image: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=85",
+    image: "images/mapaja-madogo.jpg",
     description: "Mapaja madogo ya kuku. TSh 10,000 kwa kilo."
   },
 
@@ -116,7 +116,7 @@ const products = {
     price: 10000,
     unit: "Kg",
     icon: "🍖",
-    image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=85",
+    image: "images/mapaja-makubwa.jpg",
     description: "Mapaja makubwa ya kuku. TSh 10,000 kwa kilo."
   },
 
@@ -126,7 +126,7 @@ const products = {
     price: 7000,
     unit: "Kg",
     icon: "🍗",
-    image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
+    image: "images/migongo.JPG",
     description: "Migongo ya kuku. TSh 7,000 kwa kilo."
   },
 
@@ -136,7 +136,7 @@ const products = {
     price: 7000,
     unit: "Kg",
     icon: "🍗",
-    image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
+    image: "images/shingo.JPG",
     description: "Shingo za kuku. TSh 7,000 kwa kilo."
   },
 
@@ -156,7 +156,7 @@ const products = {
     price: 7500,
     unit: "Kg",
     icon: "🥩",
-    image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=900&q=85",
+    image: "images/maini.jpg",
     description: "Maini ya kuku. TSh 7,500 kwa kilo; unaweza kununua kuanzia nusu kilo.",
     minQty: 0.5,
     step: 0.5
@@ -168,7 +168,7 @@ const products = {
     price: 7000,
     unit: "Kg",
     icon: "🥩",
-    image: "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?auto=format&fit=crop&w=900&q=85",
+    image: "images/firigisi.jpg",
     description: "Firigisi za kuku. TSh 7,000 kwa kilo."
   },
 
@@ -188,7 +188,7 @@ const products = {
     price: 5000,
     unit: "Kg",
     icon: "🍗",
-    image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85",
+    image: "images/miguu.JPG",
     description: "Miguu ya kuku. TSh 5,000 kwa kilo."
   },
 
