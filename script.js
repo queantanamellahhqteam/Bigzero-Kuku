@@ -146,7 +146,7 @@ const products = {
     price: 10000,
     unit: "Kg",
     icon: "🍖",
-    image: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=85",
+    image: "images/kidari.JPG",
     description: "Vidari vya kuku. TSh 10,000 kwa kilo."
   },
 
@@ -178,7 +178,7 @@ const products = {
     price: 5000,
     unit: "Kg",
     icon: "🍲",
-    image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=900&q=85",
+    image: "images/utumbo.JPG",
     description: "Utumbo wa kuku. TSh 5,000 kwa kilo."
   },
 
@@ -198,7 +198,7 @@ const products = {
     price: 800,
     unit: "yai",
     icon: "🥚",
-    image: "https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=900&q=85",
+    image: "images/yai.jpg",
     description: "Yai moja la kienyeji ni TSh 800."
   },
 
@@ -208,7 +208,7 @@ const products = {
     price: 24000,
     unit: "trei (mayai 30)",
     icon: "🥚",
-    image: "https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=900&q=85",
+    image: "images/trei.jpg",
     description: "Trei moja ina mayai 30. Bei ni TSh 24,000."
   },
 
@@ -218,7 +218,7 @@ const products = {
     price: 18000,
     unit: "kuku",
     icon: "🐔",
-    image: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=900&q=85",
+    image: "images/kuku-mayai.JPG",
     description: "Kuku wa mayai. TSh 18,000 kwa kuku mmoja."
   },
 
@@ -228,7 +228,7 @@ const products = {
     price: 30000,
     unit: "kuku",
     icon: "🐔",
-    image: "https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=900&q=85",
+    image: "kuku-kienyeji.jpg",
     description: "Kuku wa kienyeji. TSh 30,000 kwa kuku mmoja."
   },
 
